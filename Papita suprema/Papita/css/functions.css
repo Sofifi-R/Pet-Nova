@@ -1,0 +1,483 @@
+/* =====================================================
+   Pet Nova – css/functions.css
+   Estilos exclusivos de la página Functions (functions.html)
+   ===================================================== */
+
+:root {
+    --purple: #5b2a9e;
+    --purple-dark: #3d1a70;
+    --lavender: #f5effc;
+    --yellow: #ffc933;
+    --text: #2b2236;
+    --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Poppins", system-ui, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+section h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); color: var(--purple-dark); line-height: 1.2; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.5rem 5%;
+    background: #ffffff;
+    box-shadow: 0 1px 8px rgba(61, 26, 112, 0.12);
+}
+.brand { display: flex; align-items: center; font-weight: 700; font-size: 1.3rem; color: var(--purple); }
+.brand-logo { height: 72px; width: auto; }
+.navbar nav ul { position: relative; display: flex; gap: 0.3rem; }
+.navbar nav a {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    transition: color 0.3s;
+}
+.navbar nav a.is-under { color: var(--white); }
+.nav-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    background: var(--purple);
+    border-radius: 999px;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.34, 1.35, 0.64, 1), width 0.4s ease, height 0.4s ease, opacity 0.3s;
+}
+.login-btn {
+    background: var(--purple);
+    color: var(--white);
+    padding: 0.5rem 1.3rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+.login-btn:hover { background: var(--purple-dark); }
+
+/* ---------- Footer ---------- */
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 5%;
+    background: var(--purple-dark);
+    color: var(--white);
+    font-size: 0.95rem;
+}
+footer .brand { color: var(--yellow); display: inline-block; margin-bottom: 0.6rem; }
+.social { display: flex; flex-direction: column; gap: 0.4rem; }
+.social a:hover, .footer-legal a:hover { color: var(--yellow); }
+.footer-legal a { display: inline-block; margin-bottom: 0.6rem; text-decoration: underline; }
+
+/* ---------- Botones ---------- */
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.7rem;
+    border-radius: 999px;
+    font-weight: 600;
+    border: 2px solid var(--purple);
+    transition: background 0.2s, color 0.2s;
+}
+.btn-primary { background: var(--purple); color: var(--white); }
+.btn-primary:hover { background: var(--purple-dark); border-color: var(--purple-dark); }
+.btn-outline { color: var(--purple); }
+.btn-outline:hover { background: var(--purple); color: var(--white); }
+
+/* ---------- Encabezado de página ---------- */
+.page-hero {
+    padding: 4.5rem 5%;
+    text-align: center;
+    background: var(--lavender);
+}
+.page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--purple-dark);
+    max-width: 44rem;
+    margin: 0 auto 1rem;
+}
+.page-hero p { max-width: 38rem; margin: 0 auto 1.6rem; font-size: 1.1rem; }
+.page-hero .hero-buttons { justify-content: center; }
+.btn-yellow { background: var(--yellow); color: var(--purple-dark); border-color: var(--yellow); }
+.btn-yellow:hover { background: var(--white); border-color: var(--white); }
+.lead { font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; }
+
+/* ---------- Estadísticas ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 2.5rem 5%;
+    background: var(--purple);
+    color: var(--white);
+    text-align: center;
+}
+.stat strong { display: block; font-size: 2.2rem; color: var(--yellow); line-height: 1.2; }
+.stat span { font-size: 0.95rem; }
+
+/* ---------- Bloques texto + imagen ---------- */
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 5%;
+}
+.split h2 { margin-bottom: 1rem; }
+.split p { margin-bottom: 1rem; max-width: 36rem; }
+.split img { width: 100%; max-height: 28rem; object-fit: cover; border-radius: 24px; background: var(--lavender); }
+.split--reverse > :first-child { order: 2; }
+.section-lavender { background: var(--lavender); }
+
+/* ---------- Lugares (Pet Map) ---------- */
+.place-list { display: grid; gap: 0.7rem; margin-top: 1.2rem; }
+.place-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.8rem 1rem;
+    background: var(--white);
+    border-radius: 16px;
+    font-weight: 600;
+    color: var(--purple-dark);
+    box-shadow: 0 2px 12px rgba(61, 26, 112, 0.12);
+}
+.place-icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: var(--lavender);
+    font-size: 1.1rem;
+}
+
+/* ---------- Etiquetas (perfil médico) ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
+.chip {
+    padding: 0.35rem 0.9rem;
+    background: var(--white);
+    color: var(--purple-dark);
+    border: 2px solid var(--purple);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ---------- Paw Alert ---------- */
+.alert-demo {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.8rem;
+    background: var(--white);
+    border: 2px solid var(--yellow);
+    border-left-width: 10px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0 var(--lavender);
+}
+.alert-demo strong { color: var(--purple-dark); font-size: 1.2rem; }
+.alert-demo p { margin: 0.2rem 0 0; }
+.alert-dot {
+    flex: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    background: #e5484d;
+    animation: pulse 1.6s ease-out infinite;
+}
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(229, 72, 77, 0.6); }
+    100% { box-shadow: 0 0 0 16px rgba(229, 72, 77, 0); }
+}
+
+/* ---------- Calendario ---------- */
+.features {
+    padding: 5rem 5%;
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+    color: var(--white);
+    text-align: center;
+}
+.features h2 { color: var(--white); }
+.section-sub { margin: 0.6rem auto 2.5rem; }
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    max-width: 52rem;
+    margin: 0 auto;
+}
+.event-card {
+    padding: 1.5rem 1rem;
+    background: var(--white);
+    color: var(--text);
+    border-top: 6px solid var(--yellow);
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+.event-icon { font-size: 2rem; }
+.event-card h3 { color: var(--purple-dark); margin: 0.3rem 0; }
+.event-date { font-size: 1.4rem; font-weight: 700; color: var(--purple); }
+
+/* ---------- Pet Moments ---------- */
+.moments { padding: 5rem 5%; text-align: center; }
+
+/* ---------- Galería (Pet Moments) ---------- */
+.moments .lead { max-width: 44rem; margin: 1.2rem auto 2rem; }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 62rem;
+    margin: 0 auto;
+}
+.gallery img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 20px;
+    background: var(--lavender);
+    transition: transform 0.3s;
+}
+.gallery img:hover { transform: scale(1.04) rotate(-1deg); }
+
+/* ---------- Llamado final ---------- */
+.cta {
+    padding: 5rem 5%;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+}
+.cta h2 { color: var(--yellow); margin-bottom: 1rem; }
+.cta p { max-width: 40rem; margin: 0 auto 1.8rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+    .navbar { flex-wrap: wrap; justify-content: center; }
+    .brand-logo { height: 60px; }
+    .navbar nav ul { flex-wrap: wrap; justify-content: center; gap: 0.3rem; }
+    footer { grid-template-columns: 1fr; text-align: center; }
+    .social { align-items: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nav-cursor { transition: none; }
+}
+
+/* ---------- Responsive (Functions) ---------- */
+@media (max-width: 860px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .split { grid-template-columns: 1fr; padding: 3rem 5%; gap: 2rem; }
+    .split--reverse > :first-child { order: 0; }
+    .calendar-grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .alert-dot { animation: none; }
+    .gallery img { transition: none; }
+}
+
+/* =====================================================
+   NUEVAS SECCIONES DE FUNCTIONS
+   ===================================================== */
+
+/* ---------- Mapa ilustrado de Panamá ---------- */
+.pmap { padding: 5rem 5%; background: linear-gradient(180deg, #fff 0%, #eefafb 100%); }
+.pmap-head { text-align: center; max-width: 44rem; margin: 0 auto 2.5rem; }
+.pmap-intro { margin-top: 0.8rem; font-size: 1.15rem; font-weight: 500; }
+.pmap-grid { display: grid; grid-template-columns: 1.7fr 0.8fr; gap: 2rem; max-width: 74rem; margin: 0 auto; align-items: start; }
+.pmap-figure { border-radius: 28px; overflow: hidden; box-shadow: 10px 10px 0 var(--lavender); border: 3px solid var(--purple-dark); background: #bfeaf0; }
+.pmap-svg { display: block; width: 100%; height: auto; }
+.sea-label { font: italic 600 14px "Poppins", sans-serif; letter-spacing: 0.25em; fill: #6fb9c4; }
+.country-label { font: 700 12px "Poppins", sans-serif; letter-spacing: 0.2em; fill: #fff; opacity: 0.9; }
+.title-label { font: 800 30px "Poppins", sans-serif; letter-spacing: 0.08em; fill: #3d5a73; }
+.ship { animation: bob 4s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+.map-pin { cursor: pointer; outline: none; }
+.pin-body { transition: transform 0.2s; transform-box: fill-box; transform-origin: center; }
+.map-pin:hover .pin-body, .map-pin:focus-visible .pin-body { transform: scale(1.18); }
+.map-pin.is-selected .pin-body { transform: scale(1.25); filter: drop-shadow(0 0 6px #ffc933) drop-shadow(0 0 2px #ffc933); }
+.pin-label { font: 700 12px "Poppins", sans-serif; fill: #3d1a70; paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+.map-pin:focus-visible .pin-label { fill: #5b2a9e; }
+.pmap-card { padding: 1.6rem; background: var(--white); border: 2px solid var(--yellow); border-left-width: 10px; border-radius: 20px; box-shadow: 8px 8px 0 var(--lavender); }
+.pmap-chip { display: inline-block; padding: 0.2rem 0.8rem; background: var(--yellow); color: var(--purple-dark); border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+.pmap-card h3 { margin: 0.7rem 0 0.3rem; font-size: 1.5rem; color: var(--purple-dark); }
+.pmap-note { margin-top: 0.8rem; font-size: 0.82rem; color: #6a5a85; }
+.pmap-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.pmap-list button { font: inherit; font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 999px; border: 2px solid var(--purple); background: var(--white); color: var(--purple-dark); cursor: pointer; transition: background 0.2s, color 0.2s; }
+.pmap-list button:hover, .pmap-list button[aria-pressed="true"] { background: var(--purple); color: var(--white); }
+
+/* ---------- Información médica (gato al centro, tarjetas editables) ---------- */
+.medinfo { padding: 5rem 5%; text-align: center; }
+.medinfo-head { max-width: 40rem; margin: 0 auto 2.5rem; }
+.medinfo-hint { font-size: 0.9rem; color: #6a5a85; }
+.medinfo-grid { display: grid; grid-template-columns: 1fr minmax(15rem, 0.9fr) 1fr; gap: 2rem; max-width: 74rem; margin: 0 auto; align-items: center; text-align: left; }
+.med-col { display: grid; gap: 1.2rem; }
+.med-center { position: relative; }
+.med-center::before { content: ""; position: absolute; inset: 4% 2%; border-radius: 50%; background: radial-gradient(circle, #fff 0%, #e7d9fa 60%, transparent 72%); }
+.med-cat { z-index: 2; }
+.med-card { position: relative; padding: 1rem 1.2rem 1.2rem; background: var(--white); border: 2px solid var(--purple); border-radius: 20px; box-shadow: 6px 6px 0 #dcc8f7; transition: transform 0.2s; }
+.med-card:hover { transform: translateY(-3px); }
+.med-card header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+.med-icon { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--lavender); }
+.med-card h3 { flex: 1; font-size: 1.05rem; color: var(--purple-dark); }
+.med-edit { font: inherit; font-size: 0.8rem; font-weight: 600; padding: 0.2rem 0.7rem; border-radius: 999px; border: 2px solid var(--purple); background: var(--white); color: var(--purple); cursor: pointer; }
+.med-edit:hover { background: var(--purple); color: var(--white); }
+.med-body { min-height: 2.6rem; padding: 0.4rem 0.6rem; border-radius: 12px; border: 2px dashed transparent; white-space: pre-wrap; overflow-wrap: anywhere; }
+.med-card.is-editing { border-color: var(--yellow); }
+.med-card.is-editing .med-body { border-color: var(--purple); background: var(--lavender); outline: none; }
+.med-card.is-editing .med-edit { background: var(--purple); color: var(--white); }
+.med-reset { text-align: right; }
+.med-reset button { font: inherit; font-size: 0.8rem; color: var(--purple); background: none; border: 0; text-decoration: underline; cursor: pointer; }
+.med-card--left::after, .med-col--left .med-card::after, .med-col--right .med-card::before { content: ""; position: absolute; top: 50%; width: 1.4rem; border-top: 3px dotted var(--purple); }
+.med-col--left .med-card::after { left: 100%; }
+.med-col--right .med-card::before { right: 100%; }
+
+/* ---------- Calendario de manzanas ---------- */
+.appcal { padding: 5rem 5%; color: var(--white); background: #0f7a3a; background-image: radial-gradient(rgba(255,255,255,0.07) 1.5px, transparent 1.6px); background-size: 22px 22px; }
+.appcal-head { text-align: center; max-width: 42rem; margin: 0 auto 2.5rem; }
+.appcal-head h2 { color: var(--white); margin-bottom: 0.6rem; }
+.appcal-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; max-width: 74rem; margin: 0 auto; align-items: start; }
+.cal-poster { position: relative; padding: 1.2rem 1.4rem 4rem; background: #148f43; border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.3); overflow: hidden; }
+.cal-top { text-align: center; font-weight: 600; letter-spacing: 0.3em; font-size: 0.85rem; color: #f3f0d0; margin-bottom: 0.8rem; }
+.cal-sticker { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font: 700 0.6rem/1.1 "Poppins", sans-serif; color: var(--white); text-transform: uppercase; letter-spacing: 0.05em; }
+.cal-sticker svg { width: 1.1rem; height: 1.1rem; fill: currentColor; margin: 0.1rem 0; }
+.cal-sticker--left { top: 2.6rem; left: 1.4rem; width: 7rem; height: 3.4rem; background: #d6252a; border: 3px solid #fff; border-radius: 50%; transform: rotate(-4deg); }
+.cal-sticker--round { top: 5.3rem; left: 9.4rem; width: 4rem; height: 4rem; background: #0f6a35; border: 3px solid #fff; border-radius: 50%; transform: rotate(-6deg); }
+.cal-apple { position: absolute; top: 1.8rem; right: 1.4rem; width: 8rem; transform: rotate(8deg); filter: drop-shadow(3px 4px 0 rgba(0,0,0,0.25)); }
+.cal-title { margin-top: 3.4rem; display: flex; flex-direction: column; line-height: 0.95; }
+.cal-year { font: 400 clamp(2.4rem, 6vw, 3.6rem) "Rammetto One", "Lilita One", sans-serif; color: #fff; transform: rotate(-3deg); transform-origin: left; }
+.cal-month { font: 400 clamp(2.2rem, 6.5vw, 4rem) "Rammetto One", "Lilita One", sans-serif; color: #f2b831; letter-spacing: 0.02em; transform: rotate(-1.5deg); transform-origin: left; text-shadow: 3px 3px 0 rgba(0,0,0,0.18); }
+.cal-tag-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1.1rem 0 0.9rem; }
+.cal-tag { padding: 0.35rem 0.9rem; background: #c8431b; color: #fff; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.04em; }
+.cal-fresh { font-weight: 600; font-size: 0.8rem; letter-spacing: 0.08em; }
+.cal-nav { display: flex; justify-content: flex-end; gap: 0.4rem; margin-bottom: 0.6rem; }
+.cal-nav button { font: 700 0.85rem "Poppins", sans-serif; min-width: 2.4rem; padding: 0.3rem 0.8rem; background: #f2b831; color: #7a2a0c; border: 0; border-radius: 6px; cursor: pointer; transition: transform 0.15s, background 0.15s; }
+.cal-nav button:hover { background: #ffd24a; transform: translateY(-2px); }
+.cal-board { padding: 0.6rem; background: #c8431b; background-image: radial-gradient(rgba(0,0,0,0.07) 1px, transparent 1.2px); background-size: 6px 6px; }
+.cal-week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 6px; }
+.cal-week span { display: grid; place-items: center; aspect-ratio: 1.5; background: #f2b831; color: #fff; font: 400 clamp(1.3rem, 3.4vw, 2rem) "Lilita One", sans-serif; }
+.cal-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.cal-day, .cal-empty { position: relative; aspect-ratio: 1; }
+.cal-empty::before { content: ""; position: absolute; inset: 12%; background: #f3dfb8; opacity: 0.85; clip-path: polygon(50.0% 0.0%, 60.4% 28.4%, 89.1% 18.8%, 73.4% 44.7%, 98.7% 61.1%, 68.8% 65.0%, 71.7% 95.0%, 50.0% 74.0%, 28.3% 95.0%, 31.2% 65.0%, 1.3% 61.1%, 26.6% 44.7%, 10.9% 18.8%, 39.6% 28.4%); }
+.cal-day { display: block; padding: 0; border: 0; background: #f6ead0; color: #c8431b; font: 400 clamp(1.2rem, 3.2vw, 2rem) "Lilita One", sans-serif; cursor: pointer; transition: transform 0.15s, background 0.15s; }
+.cal-day:nth-child(3n) { transform: rotate(-1.4deg); }
+.cal-day:nth-child(3n+1) { transform: rotate(1deg); }
+.cal-day:hover { background: #fff6dd; transform: scale(1.07) rotate(0); z-index: 2; }
+.cal-day:focus-visible { outline: 3px solid #fff; outline-offset: 1px; z-index: 3; }
+.cal-day .num { position: absolute; top: 8%; left: 12%; }
+.cal-day.is-today { box-shadow: inset 0 0 0 3px #f2b831; }
+.cal-day.is-selected { background: #ffd24a; }
+.cal-day .paw { position: absolute; right: 6%; bottom: 6%; width: 46%; height: 46%; fill: #5a2a12; }
+.cal-day.paw-pop .paw { animation: pawPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes pawPop { 0% { transform: scale(0) rotate(-40deg); opacity: 0; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+.cal-basket { position: absolute; left: 0; right: 0; bottom: 0; height: 1.8rem; background: repeating-linear-gradient(90deg, #c79a5c 0 14px, #a87a3e 14px 18px); border-top: 4px solid #8a6230; }
+.cal-side { display: grid; gap: 1.5rem; }
+.cal-form, .cal-entries { padding: 1.6rem; background: var(--white); color: var(--text); border-radius: 22px; box-shadow: 8px 8px 0 #0a5a2a; }
+.cal-form h3, .cal-entries h3 { color: var(--purple-dark); font-size: 1.3rem; margin-bottom: 0.9rem; }
+.cal-field { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 0.9rem; }
+.cal-field label { font-weight: 600; font-size: 0.9rem; color: var(--purple-dark); }
+.cal-field input, .cal-field select, .cal-field textarea { font: inherit; padding: 0.55rem 0.8rem; border: 2px solid #d9c9f2; border-radius: 12px; background: #fff; color: var(--text); }
+.cal-field input:focus, .cal-field select:focus, .cal-field textarea:focus { outline: none; border-color: var(--purple); }
+.cal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.cal-submit { width: 100%; padding: 0.8rem 1rem; font: 700 1rem "Poppins", sans-serif; color: #fff; background: #c8431b; border: 0; border-radius: 999px; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+.cal-submit:hover { background: #a73612; transform: translateY(-2px); }
+.cal-status { min-height: 1.4rem; margin-top: 0.7rem; font-weight: 600; font-size: 0.9rem; color: #0f7a3a; }
+.cal-status.is-error { color: #c0262d; }
+.cal-entry-list { display: grid; gap: 0.6rem; }
+.cal-entry-list li { display: flex; align-items: flex-start; gap: 0.7rem; padding: 0.6rem 0.8rem; background: var(--lavender); border-radius: 14px; font-size: 0.9rem; }
+.cal-entry-list .e-date { flex: none; min-width: 3.2rem; font-weight: 700; color: var(--purple); }
+.cal-entry-list .e-main { flex: 1; overflow-wrap: anywhere; }
+.cal-entry-list .e-main small { display: block; color: #6a5a85; }
+.cal-entry-list .e-del { flex: none; border: 0; background: none; color: #c0262d; font-size: 1.1rem; cursor: pointer; line-height: 1; }
+.cal-empty-msg { color: #6a5a85; font-size: 0.9rem; }
+.cal-showall { font: inherit; font-size: 0.82rem; margin-bottom: 0.7rem; background: none; border: 0; color: var(--purple); text-decoration: underline; cursor: pointer; padding: 0; }
+
+/* ---------- Carrusel Pet Moments ---------- */
+.carousel { position: relative; max-width: 66rem; margin: 0 auto; }
+.car-track { display: flex; gap: 1.2rem; padding: 0.6rem 0.4rem 1.4rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+.car-track::-webkit-scrollbar { display: none; }
+.car-track:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; border-radius: 16px; }
+.moment-card { flex: 0 0 calc((100% - 2.4rem) / 3); scroll-snap-align: start; padding: 0.8rem 0.8rem 1.2rem; background: var(--white); border: 2px solid var(--lavender); border-radius: 24px; box-shadow: 0 8px 22px rgba(61,26,112,0.14); text-align: center; }
+.moment-media { aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; }
+.moment-media img { width: 100%; height: 100%; object-fit: cover; }
+.slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; height: 100%; background: var(--lavender); border: 3px dashed #cdb4f0; border-radius: 18px; color: var(--purple); font-weight: 600; font-size: 0.9rem; }
+.slot svg { width: 3rem; height: 3rem; fill: #cdb4f0; }
+.moment-msg { margin-top: 0.9rem; font-weight: 500; font-style: italic; color: var(--purple-dark); }
+.moment-user { margin-top: 0.3rem; font-weight: 700; font-size: 0.9rem; color: var(--purple); }
+.car-btn { position: absolute; top: 40%; z-index: 2; display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border: 0; border-radius: 50%; background: var(--purple); color: #fff; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: background 0.2s, transform 0.2s; }
+.car-btn:hover { background: var(--purple-dark); transform: scale(1.08); }
+.car-prev { left: -1.4rem; }
+.car-next { right: -1.4rem; }
+.car-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.4rem; }
+.car-dots button { width: 0.8rem; height: 0.8rem; padding: 0; border: 0; border-radius: 50%; background: #d9c9f2; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+.car-dots button[aria-current="true"] { background: var(--purple); transform: scale(1.3); }
+
+/* ---------- Responsive (secciones nuevas) ---------- */
+@media (max-width: 1000px) {
+    .moment-card { flex-basis: calc((100% - 1.2rem) / 2); }
+}
+@media (max-width: 860px) {
+    .pmap, .medinfo, .appcal { padding: 3rem 5%; }
+    .pmap-grid, .appcal-layout { grid-template-columns: 1fr; }
+    .medinfo-grid { grid-template-columns: 1fr; }
+    .med-center { order: -1; max-width: 22rem; margin: 0 auto; }
+    .med-col--left .med-card::after, .med-col--right .med-card::before { display: none; }
+    .cal-apple { width: 5.5rem; }
+    .cal-sticker--round { top: 6.4rem; left: auto; right: 1rem; width: 3.8rem; height: 3.8rem; }
+    .cal-sticker--left { width: 5.6rem; }
+    .car-prev { left: -0.4rem; }
+    .car-next { right: -0.4rem; }
+}
+@media (max-width: 600px) {
+    .moment-card { flex-basis: 100%; }
+    .cal-tag-row { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    .cal-row { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ship, .cal-day.paw-pop .paw { animation: none; }
+    .car-track { scroll-behavior: auto; }
+    .pin-body, .med-card, .cal-day { transition: none; }
+}
+
+/* ---------- Gato animado (misma base que About Us) ---------- */
+.cat-stage { position: relative; z-index: 2; width: 100%; aspect-ratio: 802 / 590; }
+.cat-lottie { position: absolute; inset: 0; }
+.cat-lottie svg { width: 100%; height: 100%; }
+.cat-fallback { display: none; position: absolute; inset: 0; place-items: center; font-size: 9rem; }
+.cat-stage.is-fallback .cat-fallback { display: grid; }
+
+/* ---------- Ajustes móvil ---------- */
+.appcal-layout > *, .pmap-grid > *, .medinfo-grid > * { min-width: 0; }
+.cal-week, .cal-days { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+@media (max-width: 600px) {
+    .cal-top { letter-spacing: 0.12em; font-size: 0.75rem; }
+    .cal-poster { padding-left: 0.9rem; padding-right: 0.9rem; }
+    .cal-sticker--left { left: 0.9rem; }
+}
+.cal-side { grid-template-columns: minmax(0, 1fr); }
+.cal-field input, .cal-field select, .cal-field textarea { width: 100%; min-width: 0; }
+.cal-row > * { min-width: 0; }

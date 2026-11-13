@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medical history, Paw Alert, Pet Map, smart calendar and more at Pet Nova.">
+    <title>Functions | Pet Nova</title>
+    <link rel="icon" href="img/a.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lilita+One&family=Rammetto+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/functions.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <a href="index.html" class="brand"><img class="brand-logo" src="img/logo-nav.png" alt="Pet Nova" width="905" height="295"></a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="functions.html" aria-current="page">Functions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li class="nav-cursor" aria-hidden="true"></li>
+            </ul>
+        </nav>
+
+        <a href="https://nova-p-git-main-pet-nova.vercel.app/" class="login-btn" target="_blank" rel="noopener">Log In</a>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="page-hero">
+            <h1>Everything your pet needs, in one single place</h1>
+            <p>Pet Nova is the app that helps you care for, connect, and celebrate every moment with your best friend.</p>
+            <div class="hero-buttons">
+                <a href="https://nova-p-git-main-pet-nova.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener">Explore the features</a>
+            </div>
+        </section>
+
+        <!-- Estadísticas (se animan con js/functions.js) -->
+        <section class="stats" aria-label="Pet Nova en cifras">
+            <div class="stat"><strong data-count="5000" data-suffix="+">5,000+</strong><span>Pets registered</span></div>
+            <div class="stat"><strong data-count="12000" data-suffix="+">12,000+</strong><span>Active users</span></div>
+            <div class="stat"><strong data-count="300" data-suffix="+">300+</strong><span>Vets listed</span></div>
+            <div class="stat"><strong data-count="98" data-suffix="%">98%</strong><span>Pets found</span></div>
+        </section>
+
+        <!-- Pet Map -->
+        <section id="pet-map" class="pmap">
+            <div class="pmap-head">
+                <h2>Little paws on the road</h2>
+                <p class="pmap-intro">This is a map that helps you discover ideal places for your pet!</p>
+            </div>
+            <div class="pmap-grid">
+                <figure class="pmap-figure">
+                    <svg class="pmap-svg" viewBox="0 0 1000 440" role="group" aria-label="Illustrated map of Panama with places for your pet">
+                        <rect width="1000" height="440" rx="28" fill="#bfeaf0"/>
+                        <g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7">
+                            <path d="M40 60q10-8 20 0t20 0t20 0M820 380q10-8 20 0t20 0t20 0M70 400q10-8 20 0t20 0t20 0M880 60q10-8 20 0t20 0M300 40q10-8 20 0t20 0M700 400q10-8 20 0t20 0"/>
+                        </g>
+                        <path class="land-shadow" transform="translate(6 8)" d="M40 215C70 190 90 175 130 180C160 150 190 185 230 195C300 200 340 175 400 185C450 190 480 215 520 205C560 190 600 190 640 210C690 225 740 205 790 225C850 245 910 255 960 280C985 295 985 322 958 328C930 335 910 322 890 337C860 352 830 332 800 322C760 307 730 312 700 322C660 332 620 302 590 297C560 292 540 307 500 322C470 337 450 367 410 367C370 367 350 337 340 307C320 282 270 302 230 297C180 302 150 282 100 267C70 257 45 247 40 215Z" fill="#8fd3d9"/>
+                        <path class="land" d="M40 215C70 190 90 175 130 180C160 150 190 185 230 195C300 200 340 175 400 185C450 190 480 215 520 205C560 190 600 190 640 210C690 225 740 205 790 225C850 245 910 255 960 280C985 295 985 322 958 328C930 335 910 322 890 337C860 352 830 332 800 322C760 307 730 312 700 322C660 332 620 302 590 297C560 292 540 307 500 322C470 337 450 367 410 367C370 367 350 337 340 307C320 282 270 302 230 297C180 302 150 282 100 267C70 257 45 247 40 215Z" fill="#7cc67f" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
+                        <g fill="#5fae66" opacity=".8">
+                            <ellipse cx="250" cy="245" rx="38" ry="10"/><ellipse cx="450" cy="250" rx="46" ry="11"/><ellipse cx="720" cy="262" rx="52" ry="11"/>
+                        </g>
+                        <g class="islands" fill="#7cc67f" stroke="#fff" stroke-width="3">
+                            <ellipse cx="60" cy="140" rx="14" ry="8"/><ellipse cx="86" cy="128" rx="9" ry="6"/><ellipse cx="580" cy="362" rx="12" ry="7"/><ellipse cx="520" cy="372" rx="8" ry="5"/>
+                        </g>
+                        <text class="sea-label" x="430" y="90">CARIBBEAN SEA</text>
+                        <text class="sea-label" x="470" y="410">PACIFIC OCEAN</text>
+                        <text class="country-label" x="40" y="206" transform="rotate(-14 40 206)">COSTA RICA</text>
+                        <text class="country-label" x="905" y="262" transform="rotate(20 905 262)">COLOMBIA</text>
+                        <text class="title-label" x="46" y="40">PANAMÁ</text>
+                        <g transform="translate(300 100)"><g class="ship"><path d="M0 20h60l-8 14H8z" fill="#fff" stroke="#3d1a70" stroke-width="2.5"/><path d="M28 18V-6l18 20z" fill="#fff" stroke="#3d1a70" stroke-width="2.5"/><path d="M26 18V0l-16 18z" fill="#fff" stroke="#3d1a70" stroke-width="2.5"/></g></g>
+                        <g transform="translate(790 365) scale(.8)"><g class="ship"><path d="M0 20h60l-8 14H8z" fill="#fff" stroke="#3d1a70" stroke-width="2.5"/><path d="M28 18V-6l18 20z" fill="#fff" stroke="#3d1a70" stroke-width="2.5"/><path d="M26 18V0l-16 18z" fill="#fff" stroke="#3d1a70" stroke-width="2.5"/></g></g>
+                        <g transform="translate(250 385)"><ellipse cx="30" cy="14" rx="34" ry="14" fill="#3d7fc0"/><path d="M60 8q18-14 26 0q-8 4-12 12z" fill="#3d7fc0"/><circle cx="14" cy="10" r="2.4" fill="#fff"/><path d="M26 -2q2-12 8-14M26 -2q-2-10-8-12" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+                        <g class="pins">
+                        <g class="map-pin" data-id="bocas" transform="translate(125 160)" tabindex="0" role="button" aria-label="Bocas del Toro: Island hopping">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><ellipse cx="-13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(18 -13 -4)"/><ellipse cx="13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(-18 13 -4)"/><circle r="12" fill="#f2c28f"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><ellipse cy="4" rx="4" ry="3" fill="#2b2236"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Bocas del Toro</text>
+                        </g>
+                        <g class="map-pin" data-id="boquete" transform="translate(190 222)" tabindex="0" role="button" aria-label="Boquete: Cool mountain air">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><path d="M-12-4L-11-16L-3-9ZM12-4L11-16L3-9Z" fill="#f29a2e"/><circle r="12" fill="#f29a2e"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><path d="M-2 4l2 2l2-2z" fill="#ffb3c1"/><path d="M-12 3l-6-1M-12 6l-6 2M12 3l6-1M12 6l6 2" stroke="#2b2236" stroke-width="1" stroke-linecap="round"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Boquete</text>
+                        </g>
+                        <g class="map-pin" data-id="david" transform="translate(140 268)" tabindex="0" role="button" aria-label="David: Vets & pet shops">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><ellipse cx="-13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(18 -13 -4)"/><ellipse cx="13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(-18 13 -4)"/><circle r="12" fill="#f2c28f"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><ellipse cy="4" rx="4" ry="3" fill="#2b2236"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">David</text>
+                        </g>
+                        <g class="map-pin" data-id="santacatalina" transform="translate(268 312)" tabindex="0" role="button" aria-label="Santa Catalina: Beach days">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><ellipse cx="-13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(18 -13 -4)"/><ellipse cx="13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(-18 13 -4)"/><circle r="12" fill="#f2c28f"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><ellipse cy="4" rx="4" ry="3" fill="#2b2236"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Santa Catalina</text>
+                        </g>
+                        <g class="map-pin" data-id="azuero" transform="translate(385 338)" tabindex="0" role="button" aria-label="Azuero: Countryside walks">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><path d="M-12-4L-11-16L-3-9ZM12-4L11-16L3-9Z" fill="#f29a2e"/><circle r="12" fill="#f29a2e"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><path d="M-2 4l2 2l2-2z" fill="#ffb3c1"/><path d="M-12 3l-6-1M-12 6l-6 2M12 3l6-1M12 6l6 2" stroke="#2b2236" stroke-width="1" stroke-linecap="round"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Azuero</text>
+                        </g>
+                        <g class="map-pin" data-id="lachorrera" transform="translate(505 292)" tabindex="0" role="button" aria-label="La Chorrera: Pet Nova home">
+                            <g class="pin-body"><circle r="21" fill="#ffc933" stroke="#3d1a70" stroke-width="3"/><g fill="#3d1a70" transform="scale(.9)"><path d="M0 8c-5 0-8 3-8 6 0 3 3 5 8 5s8-2 8-5c0-3-3-6-8-6zM-9 0a3 4 0 1 0 0 .1zM-3-5a3 4 0 1 0 0 .1zM3-5a3 4 0 1 0 0 .1zM9 0a3 4 0 1 0 0 .1z"/></g></g>
+                            <text class="pin-label" y="36" text-anchor="middle">La Chorrera</text>
+                        </g>
+                        <g class="map-pin" data-id="taboga" transform="translate(598 336)" tabindex="0" role="button" aria-label="Isla Taboga: Flower island">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><path d="M-12-4L-11-16L-3-9ZM12-4L11-16L3-9Z" fill="#f29a2e"/><circle r="12" fill="#f29a2e"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><path d="M-2 4l2 2l2-2z" fill="#ffb3c1"/><path d="M-12 3l-6-1M-12 6l-6 2M12 3l6-1M12 6l6 2" stroke="#2b2236" stroke-width="1" stroke-linecap="round"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Isla Taboga</text>
+                        </g>
+                        <g class="map-pin" data-id="panama" transform="translate(618 282)" tabindex="0" role="button" aria-label="Panamá City: Bay walks">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><ellipse cx="-13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(18 -13 -4)"/><ellipse cx="13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(-18 13 -4)"/><circle r="12" fill="#f2c28f"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><ellipse cy="4" rx="4" ry="3" fill="#2b2236"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Panamá City</text>
+                        </g>
+                        <g class="map-pin" data-id="colon" transform="translate(552 188)" tabindex="0" role="button" aria-label="Colón: Caribbean coast">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><ellipse cx="-13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(18 -13 -4)"/><ellipse cx="13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(-18 13 -4)"/><circle r="12" fill="#f2c28f"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><ellipse cy="4" rx="4" ry="3" fill="#2b2236"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Colón</text>
+                        </g>
+                        <g class="map-pin" data-id="portobelo" transform="translate(660 196)" tabindex="0" role="button" aria-label="Portobelo: Old forts by the sea">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><path d="M-12-4L-11-16L-3-9ZM12-4L11-16L3-9Z" fill="#f29a2e"/><circle r="12" fill="#f29a2e"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><path d="M-2 4l2 2l2-2z" fill="#ffb3c1"/><path d="M-12 3l-6-1M-12 6l-6 2M12 3l6-1M12 6l6 2" stroke="#2b2236" stroke-width="1" stroke-linecap="round"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Portobelo</text>
+                        </g>
+                        <g class="map-pin" data-id="darien" transform="translate(840 300)" tabindex="0" role="button" aria-label="Darién: Wild nature">
+                            <g class="pin-body"><circle r="19" fill="#fff" stroke="#3d1a70" stroke-width="3"/><ellipse cx="-13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(18 -13 -4)"/><ellipse cx="13" cy="-4" rx="6" ry="11" fill="#9a5b2e" transform="rotate(-18 13 -4)"/><circle r="12" fill="#f2c28f"/><circle cx="-4.5" cy="-2" r="1.8" fill="#2b2236"/><circle cx="4.5" cy="-2" r="1.8" fill="#2b2236"/><ellipse cy="4" rx="4" ry="3" fill="#2b2236"/></g>
+                            <text class="pin-label" y="36" text-anchor="middle">Darién</text>
+                        </g>
+                        </g>
+                    </svg>
+                </figure>
+                <aside class="pmap-card" aria-live="polite">
+                    <span class="pmap-chip" id="pmap-tag">Tap a paw on the map</span>
+                    <h3 id="pmap-name">Pick a place</h3>
+                    <p id="pmap-desc">Choose any pin to see ideas for a great day out with your pet.</p>
+                    <p class="pmap-note">Always check each place’s pet policy before you go.</p>
+                    <ul class="pmap-list" id="pmap-list"></ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Perfil médico -->
+        <section id="medical" class="medinfo section-lavender">
+            <div class="medinfo-head">
+                <h2>Medical Profile Info</h2>
+                <p class="lead">All their medical information, always organized for you.</p>
+                <p class="medinfo-hint">Tap the pencil on any card to edit it. Your changes stay on this device.</p>
+            </div>
+            <div class="medinfo-grid">
+                <div class="med-col med-col--left">
+                    <article class="med-card" data-key="vaccines">
+                    <header><span class="med-icon" aria-hidden="true">&#128137;</span><h3>Vaccines</h3>
+                        <button type="button" class="med-edit" aria-label="Edit Vaccines"><span aria-hidden="true">&#9998;</span> <span class="med-edit-text">Edit</span></button></header>
+                    <div class="med-body" data-default="Rabies: Mar 2026. Booster due: Mar 2027.">Rabies: Mar 2026. Booster due: Mar 2027.</div>
+                </article>
+                    <article class="med-card" data-key="allergies">
+                    <header><span class="med-icon" aria-hidden="true">&#127807;</span><h3>Allergies</h3>
+                        <button type="button" class="med-edit" aria-label="Edit Allergies"><span aria-hidden="true">&#9998;</span> <span class="med-edit-text">Edit</span></button></header>
+                    <div class="med-body" data-default="No known allergies.">No known allergies.</div>
+                </article>
+                    <article class="med-card" data-key="notes">
+                    <header><span class="med-icon" aria-hidden="true">&#128221;</span><h3>Important Notes</h3>
+                        <button type="button" class="med-edit" aria-label="Edit Important Notes"><span aria-hidden="true">&#9998;</span> <span class="med-edit-text">Edit</span></button></header>
+                    <div class="med-body" data-default="Afraid of fireworks. Likes chicken treats.">Afraid of fireworks. Likes chicken treats.</div>
+                </article>
+                </div>
+                <div class="med-center">
+                    <div class="cat-stage med-cat" aria-hidden="true">
+                        <div id="gato-lottie" class="cat-lottie"></div>
+                        <span class="cat-fallback">&#128049;</span>
+                    </div>
+                </div>
+                <div class="med-col med-col--right">
+                    <article class="med-card" data-key="medication">
+                    <header><span class="med-icon" aria-hidden="true">&#128138;</span><h3>Medication Records</h3>
+                        <button type="button" class="med-edit" aria-label="Edit Medication Records"><span aria-hidden="true">&#9998;</span> <span class="med-edit-text">Edit</span></button></header>
+                    <div class="med-body" data-default="Deworming tablet every 3 months.">Deworming tablet every 3 months.</div>
+                </article>
+                    <article class="med-card" data-key="history">
+                    <header><span class="med-icon" aria-hidden="true">&#129658;</span><h3>Medical History Logs</h3>
+                        <button type="button" class="med-edit" aria-label="Edit Medical History Logs"><span aria-hidden="true">&#9998;</span> <span class="med-edit-text">Edit</span></button></header>
+                    <div class="med-body" data-default="Annual check-up: all healthy.">Annual check-up: all healthy.</div>
+                </article>
+                    <p class="med-reset"><button type="button" id="med-reset">Reset to examples</button></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Alert -->
+        <section id="paw-alert" class="split">
+            <div>
+                <h2>Paw Alert</h2>
+                <p>Report and find lost pets with help from the community. Share alerts in real-time and increase the chances of a safe reunion for everyone involved.</p>
+            </div>
+            <div class="alert-demo" role="img" aria-label="Ejemplo de alerta de mascota perdida">
+                <span class="alert-dot" aria-hidden="true"></span>
+                <div>
+                    <strong>Paw Alert</strong>
+                    <p>New lost pet alert reported near your area</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendario -->
+        <section id="calendar" class="appcal">
+            <div class="appcal-head">
+                <h2>Smart Care Calendar</h2>
+                <p>Mark vaccines, vet visits and reminders. Every saved entry leaves a little paw print on the date.</p>
+            </div>
+            <div class="appcal-layout">
+                <!-- Calendario (izquierda) -->
+                <div class="cal-poster" aria-label="Interactive calendar">
+                    <p class="cal-top">The First Pick of the Year !!</p>
+                    <div class="cal-sticker cal-sticker--left" aria-hidden="true"><span>Pet Nova</span><svg viewBox="0 0 24 24"><use href="#cal-paw"/></svg><span>Care Farm</span></div>
+                    <svg class="cal-apple" viewBox="0 0 120 120" aria-hidden="true">
+                        <path d="M60 30C40 12 8 24 8 64c0 32 22 54 36 54 8 0 10-4 16-4s8 4 16 4c14 0 36-22 36-54 0-40-32-52-52-34z" fill="#d6252a"/>
+                        <path d="M30 50q-8 14-2 30" stroke="#ff6b66" stroke-width="7" fill="none" stroke-linecap="round" opacity=".7"/>
+                        <path d="M60 30q-2-14 6-26" stroke="#6b3a1e" stroke-width="6" fill="none" stroke-linecap="round"/>
+                        <path d="M64 14C76-2 98 0 102 8C94 22 74 24 64 14z" fill="#3c9a45"/>
+                    </svg>
+                    <div class="cal-title">
+                        <span class="cal-year" id="cal-year">2027</span>
+                        <span class="cal-month" id="cal-month">JANUARY</span>
+                    </div>
+                    <div class="cal-sticker cal-sticker--round" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#cal-paw"/></svg><span>Paw-fect!</span></div>
+                    <div class="cal-tag-row">
+                        <span class="cal-tag" id="cal-tag">YOUR BEST YEAR STARTS HERE.</span>
+                        <span class="cal-fresh">100% LOVED</span>
+                    </div>
+                    <div class="cal-nav">
+                        <button type="button" id="cal-prev" aria-label="Previous month">&#9664;</button>
+                        <button type="button" id="cal-today">Today</button>
+                        <button type="button" id="cal-next" aria-label="Next month">&#9654;</button>
+                    </div>
+                    <div class="cal-board">
+                        <div class="cal-week" aria-hidden="true"><span>s</span><span>m</span><span>t</span><span>w</span><span>th</span><span>f</span><span>s</span></div>
+                        <div class="cal-days" id="cal-days" role="grid" aria-labelledby="cal-month"></div>
+                    </div>
+                    <div class="cal-basket" aria-hidden="true"></div>
+                </div>
+
+                <!-- Registro (derecha) -->
+                <div class="cal-side">
+                    <form id="cal-form" class="cal-form" novalidate>
+                        <h3>Add a reminder</h3>
+                        <div class="cal-field">
+                            <label for="cal-pet">Pet name*</label>
+                            <input id="cal-pet" name="pet" type="text" maxlength="40" autocomplete="off" placeholder="e.g. Max">
+                        </div>
+                        <div class="cal-field">
+                            <label for="cal-type">What is it for?</label>
+                            <select id="cal-type" name="type">
+                                <option>Vaccine</option>
+                                <option>Vet appointment</option>
+                                <option>Medication</option>
+                                <option>Deworming</option>
+                                <option>Bath day</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="cal-row">
+                            <div class="cal-field">
+                                <label for="cal-date">Date*</label>
+                                <input id="cal-date" name="date" type="date">
+                            </div>
+                            <div class="cal-field">
+                                <label for="cal-time">Time</label>
+                                <input id="cal-time" name="time" type="time">
+                            </div>
+                        </div>
+                        <div class="cal-field">
+                            <label for="cal-note">Notes</label>
+                            <textarea id="cal-note" name="note" rows="3" maxlength="200" placeholder="Anything you want to remember"></textarea>
+                        </div>
+                        <button type="submit" class="cal-submit">Save with a paw</button>
+                        <p class="cal-status" id="cal-status" role="status" aria-live="polite"></p>
+                    </form>
+                    <div class="cal-entries">
+                        <h3 id="cal-entries-title">Entries this month</h3>
+                        <ul id="cal-entries" class="cal-entry-list"></ul>
+                    </div>
+                </div>
+            </div>
+            <svg width="0" height="0" aria-hidden="true" focusable="false"><symbol id="cal-paw" viewBox="-12 -12 24 24"><ellipse cx="0" cy="4" rx="7" ry="6"/><ellipse cx="-8" cy="-3" rx="2.8" ry="3.8" transform="rotate(-20 -8 -3)"/><ellipse cx="-3" cy="-8" rx="2.8" ry="3.8" transform="rotate(-6 -3 -8)"/><ellipse cx="3" cy="-8" rx="2.8" ry="3.8" transform="rotate(6 3 -8)"/><ellipse cx="8" cy="-3" rx="2.8" ry="3.8" transform="rotate(20 8 -3)"/></symbol></svg>
+        </section>
+
+        <!-- Pet Moments -->
+        <section id="moments" class="moments">
+            <h2>Pet Moments</h2>
+            <p class="lead">Every adventure deserves to be remembered. Save photos, create a digital album, and relive the most special moments together with your loyal life companion right here.</p>
+            <div class="carousel" id="moments-carousel" aria-roledescription="carousel" aria-label="Pet Moments">
+                <button type="button" class="car-btn car-prev" aria-label="Previous moments">&#10094;</button>
+                <ul class="car-track" id="car-track" tabindex="0">
+                    <li class="moment-card">
+                        <div class="moment-media"><img src="img/moment-perro.jpg" alt="Brown and white border collie giving a high five to a hand" loading="lazy"></div>
+                        <p class="moment-msg">&ldquo;Sunday walks are our favorite adventure.&rdquo;</p>
+                        <p class="moment-user">@luna_and_coco</p>
+                    </li>
+                    <li class="moment-card">
+                        <div class="moment-media"><img src="img/moment-gato.jpg" alt="Orange cat playing with a tennis ball" loading="lazy"></div>
+                        <p class="moment-msg">&ldquo;He found a new best friend at the park today!&rdquo;</p>
+                        <p class="moment-user">@max.the.explorer</p>
+                    </li>
+                    <li class="moment-card">
+                        <div class="moment-media"><img src="img/moment-hamster.jpg" alt="Gray hamster sitting in wood shavings next to a wheel" loading="lazy"></div>
+                        <p class="moment-msg">&ldquo;Nap time is serious business around here.&rdquo;</p>
+                        <p class="moment-user">@whisker_diaries</p>
+                    </li>
+                    <li class="moment-card">
+                        <div class="moment-media"><!-- Replace the next div with: <img src="img/your-photo.jpg" alt="..."> --><div class="slot" role="img" aria-label="Photo coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#cal-paw"/></svg><span>Your photo here</span></div></div>
+                        <p class="moment-msg">&ldquo;Little paws, big love.&rdquo;</p>
+                        <p class="moment-user">@tito_y_nube</p>
+                    </li>
+                    <li class="moment-card">
+                        <div class="moment-media"><!-- Replace the next div with: <img src="img/your-photo.jpg" alt="..."> --><div class="slot" role="img" aria-label="Photo coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#cal-paw"/></svg><span>Your photo here</span></div></div>
+                        <p class="moment-msg">&ldquo;Every day with you is a new story.&rdquo;</p>
+                        <p class="moment-user">@milo.moments</p>
+                    </li>
+                    <li class="moment-card">
+                        <div class="moment-media"><!-- Replace the next div with: <img src="img/your-photo.jpg" alt="..."> --><div class="slot" role="img" aria-label="Photo coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#cal-paw"/></svg><span>Your photo here</span></div></div>
+                        <p class="moment-msg">&ldquo;Home is wherever my human is.&rdquo;</p>
+                        <p class="moment-user">@bella_barks</p>
+                    </li>
+                </ul>
+                <button type="button" class="car-btn car-next" aria-label="Next moments">&#10095;</button>
+            </div>
+            <div class="car-dots" id="car-dots" role="group" aria-label="Choose a moment"></div>
+        </section>
+
+        <!-- CTA final -->
+        <section class="cta">
+            <h2>We care for what you love</h2>
+            <p>Everything your pet needs, in one place. Because every walk, every appointment, every memory, and every important moment deserves to be right at your fingertips.</p>
+            <a href="https://nova-p-git-main-pet-nova.vercel.app/" class="btn btn-yellow" target="_blank" rel="noopener">Get started</a>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-info">
+            <a href="index.html" class="brand">&#128062; Pet Nova</a>
+            <p>La Chorrera, Panamá Oeste, Panama</p>
+            <p>123-456-7890<br>petnovitas2027@gmail.com</p>
+        </div>
+        <ul class="social">
+            <li><a href="http://www.facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="http://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="http://www.tiktok.com" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+        <div class="footer-legal">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <p>&copy; 2026 PetNova by PetNovitasTeam</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="js/gato-lottie-data.js"></script>
+    <script>window.PETMAP = {"bocas":{"name":"Bocas del Toro","tag":"Island hopping","desc":"Beaches, boat rides and relaxed island walks. Check each stop’s pet rules before you go."},"boquete":{"name":"Boquete","tag":"Cool mountain air","desc":"Fresh-air trails and cozy cafés in the highlands of Chiriquí."},"david":{"name":"David","tag":"Vets & pet shops","desc":"The biggest city in the west: a good base for vets, food and supplies."},"santacatalina":{"name":"Santa Catalina","tag":"Beach days","desc":"Open sand and sea breeze on the Veraguas coast."},"azuero":{"name":"Azuero","tag":"Countryside walks","desc":"Quiet roads and small towns on the Azuero peninsula."},"lachorrera":{"name":"La Chorrera","tag":"Pet Nova home","desc":"Where Pet Nova was born. Parks, vets and pet shops close to home."},"taboga":{"name":"Isla Taboga","tag":"Flower island","desc":"A short boat trip from the capital for a calm day out."},"panama":{"name":"Panamá City","tag":"Bay walks","desc":"Waterfront promenades, big parks and plenty of vets and pet stores."},"colon":{"name":"Colón","tag":"Caribbean coast","desc":"Sea views and breezy walks on the Caribbean side."},"portobelo":{"name":"Portobelo","tag":"Old forts by the sea","desc":"History, sea air and shady spots for a slow stroll."},"darien":{"name":"Darién","tag":"Wild nature","desc":"Jungle and rivers: for adventurous pets and their people."}};</script>
+    <script src="js/functions.js"></script>
+
+</body>
+</html>

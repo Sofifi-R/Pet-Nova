@@ -1,0 +1,579 @@
+/* =====================================================
+   Pet Nova – css/index.css
+   Estilos exclusivos de la página Home (index.html)
+   ===================================================== */
+
+:root {
+    --purple: #5b2a9e;
+    --purple-dark: #3d1a70;
+    --lavender: #f5effc;
+    --yellow: #ffc933;
+    --text: #2b2236;
+    --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Poppins", system-ui, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+section h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); color: var(--purple-dark); line-height: 1.2; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.5rem 5%;
+    background: #ffffff;
+    box-shadow: 0 1px 8px rgba(61, 26, 112, 0.12);
+}
+.brand { display: flex; align-items: center; font-weight: 700; font-size: 1.3rem; color: var(--purple); }
+.brand-logo { height: 72px; width: auto; }
+.navbar nav ul { position: relative; display: flex; gap: 0.3rem; }
+.navbar nav a {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    transition: color 0.3s;
+}
+.navbar nav a.is-under { color: var(--white); }
+.nav-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    background: var(--purple);
+    border-radius: 999px;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.34, 1.35, 0.64, 1), width 0.4s ease, height 0.4s ease, opacity 0.3s;
+}
+.login-btn {
+    background: var(--purple);
+    color: var(--white);
+    padding: 0.5rem 1.3rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+.login-btn:hover { background: var(--purple-dark); }
+
+/* ---------- Footer ---------- */
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 5%;
+    background: var(--purple-dark);
+    color: var(--white);
+    font-size: 0.95rem;
+}
+footer .brand { color: var(--yellow); display: inline-block; margin-bottom: 0.6rem; }
+.social { display: flex; flex-direction: column; gap: 0.4rem; }
+.social a:hover, .footer-legal a:hover { color: var(--yellow); }
+.footer-legal a { display: inline-block; margin-bottom: 0.6rem; text-decoration: underline; }
+
+/* ---------- Botones ---------- */
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.7rem;
+    border-radius: 999px;
+    font-weight: 600;
+    border: 2px solid var(--purple);
+    transition: background 0.2s, color 0.2s;
+}
+.btn-primary { background: var(--purple); color: var(--white); }
+.btn-primary:hover { background: var(--purple-dark); border-color: var(--purple-dark); }
+.btn-outline { color: var(--purple); }
+.btn-outline:hover { background: var(--purple); color: var(--white); }
+
+/* ---------- Hero ---------- */
+/* Pon tu foto de la familia con su perro en img/familia-perro.jpg.
+   Mientras no exista, se muestra img/home.jpg como respaldo. */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: clamp(26rem, 62vh, 40rem);
+    padding: 4rem 5%;
+    background-color: var(--lavender);
+    background-image: url("../img/familia-perro.jpg"), url("../img/home.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0) 80%);
+}
+.hero-text { position: relative; max-width: 40rem; }
+.hero h1 {
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    line-height: 1.1;
+    color: var(--purple);
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 12px rgba(255,255,255,0.8);
+}
+.hero p { font-size: 1.1rem; max-width: 34rem; color: var(--purple-dark); font-weight: 500; }
+
+/* ---------- Etiqueta ---------- */
+.badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--purple-dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.2rem;
+}
+
+/* ---------- Franja morada con gato ---------- */
+.stats {
+    padding: 0;
+    background: var(--purple);
+    background-image: none;
+    overflow: hidden;
+}
+.cat-track { position: relative; height: 120px; }
+.cat-walker {
+    position: absolute;
+    bottom: -34px;
+    left: 0;
+    width: 150px;
+    animation: cat-walk 16s linear infinite;
+}
+.cat-flip { animation: cat-turn 16s step-end infinite; transform-origin: center; }
+.dog-anim { width: 150px; height: 150px; }
+/* El gato en SVG solo aparece si no carga la animación del perro */
+.cat { display: none; width: 120px; height: auto; overflow: visible; }
+.cat-track.is-fallback .dog-anim { display: none; }
+.cat-track.is-fallback .cat { display: block; }
+.cat-track.is-fallback .cat-walker { bottom: 6px; }
+
+/* Va de izquierda a derecha y regresa, girando al llegar a cada extremo */
+@keyframes cat-walk {
+    0%   { left: 0; }
+    50%  { left: calc(100% - 150px); }
+    100% { left: 0; }
+}
+@keyframes cat-turn {
+    0%   { transform: scaleX(1); }
+    50%  { transform: scaleX(-1); }
+    100% { transform: scaleX(1); }
+}
+
+/* Patas y cola */
+.leg { transform-box: fill-box; transform-origin: 50% 0; animation: leg-swing 0.7s ease-in-out infinite; }
+.leg-b1, .leg-f2 { animation-delay: -0.35s; }
+.cat-tail { transform-box: fill-box; transform-origin: 100% 100%; animation: tail-wag 1.4s ease-in-out infinite; }
+@keyframes leg-swing { 0%, 100% { transform: rotate(-24deg); } 50% { transform: rotate(24deg); } }
+@keyframes tail-wag { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(10deg); } }
+
+/* ---------- Secciones generales ---------- */
+.about, .petmap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 5%;
+}
+.about img, .petmap img { border-radius: 24px; width: 100%; }
+.about {
+    position: relative;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3.5rem;
+    padding: 6rem 4%;
+    overflow: hidden;
+    isolation: isolate;
+}
+.about img { box-shadow: 0 14px 40px rgba(61, 26, 112, 0.22); }
+.about > img, .about-text { position: relative; z-index: 1; }
+.paw-bg { position: absolute; }
+.paws { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.paw { position: absolute; fill: var(--purple); opacity: 0.12; }
+.p1 { width: 70px;  top: 6%;  left: 3%;  transform: rotate(-20deg); }
+.p2 { width: 46px;  top: 22%; left: 40%; transform: rotate(15deg); }
+.p3 { width: 90px;  top: 62%; left: 2%;  transform: rotate(25deg); }
+.p4 { width: 56px;  top: 86%; left: 34%; transform: rotate(-10deg); }
+.p5 { width: 80px;  top: 8%;  right: 4%; transform: rotate(18deg); }
+.p6 { width: 50px;  top: 44%; right: 30%; transform: rotate(-28deg); fill: var(--yellow); opacity: 0.35; }
+.p7 { width: 100px; top: 70%; right: 5%; transform: rotate(-15deg); }
+.p8 { width: 40px;  top: 90%; right: 26%; transform: rotate(30deg); }
+.about-text h2, .petmap-text h2 { margin-bottom: 1rem; }
+.about-text p, .petmap-text p { margin-bottom: 1rem; max-width: 36rem; }
+
+/* ---------- Funciones (pestañas animadas) ---------- */
+.features {
+    padding: 5rem 5%;
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+    color: var(--white);
+    text-align: center;
+}
+.features { position: relative; overflow: hidden; isolation: isolate; }
+.features-inner { position: relative; z-index: 1; }
+.features h2 { color: var(--white); }
+
+/* Siluetas de aves al fondo */
+.birds { position: absolute; inset: 0; z-index: 0; pointer-events: none; color: #fff; }
+.bird { position: absolute; fill: #fff; opacity: 0.16; animation: bird-drift 18s ease-in-out infinite alternate; }
+.b1 { width: 70px;  top: 7%;  left: 6%; }
+.b2 { width: 46px;  top: 13%; left: 14%; animation-delay: -4s; }
+.b3 { width: 56px;  top: 4%;  left: 24%; animation-delay: -8s; opacity: 0.12; }
+.b4 { width: 84px;  top: 9%;  right: 8%; animation-delay: -2s; }
+.b5 { width: 50px;  top: 18%; right: 17%; animation-delay: -6s; }
+.b6 { width: 38px;  top: 6%;  right: 26%; animation-delay: -10s; opacity: 0.12; }
+.perch { position: absolute; fill: #fff; opacity: 0.18; }
+.pc1 { width: min(260px, 32vw); bottom: 2%; left: 1%; }
+.pc2 { width: min(220px, 28vw); bottom: 3%; right: 1%; }
+@keyframes bird-drift { from { transform: translate(-14px, 4px); } to { transform: translate(18px, -8px); } }
+.section-sub { margin: 0.6rem auto 2.5rem; }
+
+.tabs {
+    width: 100%;
+    max-width: 62rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: left;
+}
+.tab-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.25rem;
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+}
+.tab-pill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: rgba(17, 17, 17, 0.82);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.6s cubic-bezier(0.34, 1.35, 0.64, 1), width 0.6s ease, height 0.6s ease;
+}
+.tab-btn {
+    position: relative;
+    z-index: 1;
+    padding: 0.4rem 0.8rem;
+    background: none;
+    border: 0;
+    border-radius: 8px;
+    color: var(--white);
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.tab-btn[aria-selected="true"] { color: var(--yellow); }
+.tab-btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+.tab-panel {
+    padding: 1.2rem;
+    min-height: 24rem;
+    background: rgba(17, 17, 17, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+}
+.tab-panel[hidden] { display: none; }
+.tab-panel-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.8rem;
+    align-items: center;
+    animation: tab-in 0.5s ease both;
+}
+.tab-panel-inner img {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--purple), var(--yellow));
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.tab-panel h3 { font-size: 1.9rem; margin-bottom: 0.5rem; color: var(--yellow); }
+.tab-panel p { font-size: 1.05rem; color: #e9e3f2; }
+
+@keyframes tab-in {
+    from { opacity: 0; transform: translateX(-10px) scale(0.95); filter: blur(10px); }
+    to   { opacity: 1; transform: none; filter: blur(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .cat-walker, .cat-flip, .leg, .cat-tail, .person .flash, .bird { animation: none; }
+    .tab-pill, .nav-cursor { transition: none; }
+    .tab-panel-inner { animation: none; }
+}
+
+/* ---------- Pet Moments (galería de arte) ---------- */
+.moments {
+    position: relative;
+    padding: 5rem 5% 0;
+    text-align: center;
+    color: #fbeaf1;
+    overflow: hidden;
+    background-color: #7d1a3f;
+    background-image:
+        radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.12), transparent 60%),
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.07) 0 9px, transparent 10px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.07) 0 9px, transparent 10px),
+        radial-gradient(ellipse at 25% 75%, rgba(0, 0, 0, 0.10) 0 7px, transparent 8px),
+        radial-gradient(ellipse at 75% 25%, rgba(0, 0, 0, 0.10) 0 7px, transparent 8px);
+    background-size: auto, 56px 56px, 56px 56px, 56px 56px, 56px 56px;
+}
+.moments h2 { color: #f3d98b; font-size: clamp(3.2rem, 9vw, 6.5rem); line-height: 1; letter-spacing: 0.01em; text-shadow: 0 3px 14px rgba(0, 0, 0, 0.4); }
+.moments blockquote {
+    max-width: 44rem;
+    margin: 1.2rem auto 0;
+    font-size: 1.15rem;
+    font-style: italic;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 15rem 15rem 15rem;
+    grid-template-areas:
+        "nose   main main cat"
+        "turtle main main bird"
+        ".      hamster hamster .";
+    gap: 1.4rem;
+    max-width: 66rem;
+    margin: 2.8rem auto 0;
+}
+.f-nose { grid-area: nose; }
+.f-main { grid-area: main; }
+.f-cat { grid-area: cat; }
+.f-turtle { grid-area: turtle; }
+.f-bird { grid-area: bird; }
+.f-hamster { grid-area: hamster; }
+.frame {
+    display: flex;
+    padding: 0.6rem;
+    background: linear-gradient(135deg, #f6e08e, #b8892b 40%, #f1d479 65%, #8a6418);
+    border-radius: 4px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55), inset 0 0 0 2px rgba(60, 35, 5, 0.45);
+}
+.frame img {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid #f4ecdc;
+    box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.35);
+}
+.f-main img { object-position: center 40%; }
+.f-bird img { object-position: center 28%; }
+.f-hamster img { object-position: center 42%; }
+.f-cat img { object-position: center 30%; }
+
+/* Visitantes de espaldas con celulares y flashes */
+.visitors {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(0.6rem, 3.5vw, 3rem);
+    margin: -2.6rem auto -3.4rem;
+    max-width: 64rem;
+}
+.person { width: clamp(64px, 11vw, 120px); height: auto; overflow: visible; }
+.person .hair { fill: #2a1a14; }
+.person .legs { fill: #1d1630; }
+.person .arm { fill: none; stroke: #2a1a14; stroke-width: 12; stroke-linecap: round; }
+.person .phone rect { fill: #14101c; stroke: #cfc6dc; stroke-width: 1.5; }
+.person .phone circle { fill: #6d5f8a; }
+.v1 .top { fill: #5b2a9e; } .v1 .arm { stroke: #5b2a9e; }
+.v2 .top { fill: #ffc933; } .v2 .arm { stroke: #ffc933; } .v2 .hair { fill: #6b3b1f; }
+.v3 .top { fill: #1f6f78; } .v3 .arm { stroke: #1f6f78; } .v3 .hair { fill: #15101c; }
+.v4 .top { fill: #e0568a; } .v4 .arm { stroke: #e0568a; } .v4 .hair { fill: #8b5a2b; }
+.v5 .top { fill: #2b2236; } .v5 .arm { stroke: #2b2236; } .v5 .hair { fill: #c9a14e; }
+.person .flash {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: camera-flash 4.8s infinite;
+}
+.v1 .flash { animation-delay: 0.3s; }
+.v2 .flash { animation-delay: 1.9s; animation-duration: 5.6s; }
+.v3 .flash { animation-delay: 3.1s; animation-duration: 4.2s; }
+.v4 .flash { animation-delay: 0.9s; animation-duration: 6.1s; }
+.v5 .flash { animation-delay: 2.6s; animation-duration: 5.1s; }
+@keyframes camera-flash {
+    0%, 86%, 100% { opacity: 0; transform: scale(0.3); }
+    89% { opacity: 1; transform: scale(1.5); }
+    94% { opacity: 0.25; transform: scale(1.1); }
+}
+
+.floor {
+    position: relative;
+    z-index: 1;
+    margin: 0 -5%;
+    padding: 4.2rem 5% 1.8rem;
+    background:
+        repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0 2px, transparent 2px 120px),
+        linear-gradient(#c58b50, #9a6633);
+    box-shadow: inset 0 14px 18px rgba(0, 0, 0, 0.3);
+}
+.moments-more { font-size: 1.15rem; font-weight: 600; color: #2b1608; }
+.moments-more a { color: var(--purple-dark); text-decoration: underline; text-underline-offset: 3px; }
+.moments-more a:hover { color: var(--purple); }
+
+/* ---------- Banner final ---------- */
+.play-banner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 3rem;
+    min-height: 36rem;
+    padding: 4rem 7%;
+    background: #0cbddc;
+    overflow: hidden;
+}
+.play-banner h2 {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    font-size: clamp(2.6rem, 6vw, 5.2rem);
+    font-weight: 800;
+    line-height: 1.02;
+    text-align: left;
+    text-shadow: 5px 5px 0 #523f7a;
+}
+.play-photo {
+    position: relative;
+    z-index: 1;
+    justify-self: end;
+    height: 34rem;
+    width: auto;
+    max-width: 100%;
+    aspect-ratio: 736 / 920;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 12px 12px 0 #523f7a;
+    transform: rotate(2deg);
+}
+.spark { position: absolute; color: #fff; opacity: 0.7; line-height: 1; pointer-events: none; }
+.sp1 { top: 12%; left: 5%;  font-size: 2.6rem; }
+.sp2 { bottom: 14%; left: 44%; font-size: 1.8rem; }
+.sp3 { top: 10%; right: 6%; font-size: 3.2rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+    .navbar { flex-wrap: wrap; justify-content: center; }
+    .navbar nav ul { flex-wrap: wrap; justify-content: center; gap: 0.3rem; }
+    .hero, .about, .petmap { grid-template-columns: 1fr; padding: 3rem 5%; gap: 2rem; }
+    .hero { min-height: 24rem; }
+    .hero::before { background: rgba(255,255,255,0.7); }
+    .brand-logo { height: 60px; }
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-rows: 13rem; grid-template-areas: "main main" "main main" "nose cat" "turtle bird" "hamster hamster"; }
+    .play-banner { grid-template-columns: 1fr; min-height: 0; padding: 3rem 6% 3.5rem; gap: 2rem; }
+    .play-banner h2 { text-align: center; }
+    .play-photo { justify-self: center; height: auto; width: min(100%, 22rem); }
+    .tab-panel-inner img { height: 15rem; }
+    .tab-panel-inner { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; text-align: center; }
+    .social { align-items: center; }
+}
+
+/* ---------- Banner final: perro recortado ---------- */
+.play-banner:has(.play-photo--cutout) { min-height: 26rem; padding-top: 3rem; padding-bottom: 0; align-items: end; }
+.play-banner:has(.play-photo--cutout) h2 { align-self: center; padding-bottom: 3rem; }
+.play-photo--cutout {
+    height: 24rem;
+    aspect-ratio: 945 / 1320;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+    margin-right: 4%;
+    filter: drop-shadow(5px 5px 0 #523f7a);
+}
+
+/* ---------- Agradecimiento final ---------- */
+.thank-you {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    min-height: 26rem;
+    padding: 4rem 9%;
+    background: linear-gradient(135deg, #1a7f96 0%, #3a5b8c 50%, #55407f 100%);
+    color: var(--white);
+    overflow: hidden;
+}
+.ty-icons { position: absolute; inset: 0; pointer-events: none; }
+.ti { position: absolute; fill: #fff; color: #fff; opacity: 0.14; }
+.t1 { width: 54px; top: 12%; left: 46%; transform: rotate(-30deg); }
+.t2 { width: 30px; top: 30%; left: 4%; }
+.t3 { width: 64px; top: 58%; left: 30%; }
+.t4 { width: 56px; bottom: 8%; left: 3%; }
+.t5 { width: 60px; top: 10%; left: 18%; transform: rotate(20deg); }
+.t6 { width: 26px; bottom: 12%; left: 52%; }
+.t7 { width: 80px; bottom: 6%; left: 44%; }
+.t8 { width: 46px; top: 14%; right: 6%; }
+.t9 { width: 30px; bottom: 30%; right: 8%; }
+.t10 { width: 50px; bottom: 10%; right: 22%; transform: rotate(-18deg); }
+.t11 { width: 56px; top: 40%; left: 14%; }
+.ty-text { position: relative; z-index: 1; }
+.ty-text h2 { color: var(--white); font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.8rem; }
+.ty-text p { max-width: 24rem; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.2rem; }
+.ty-btn {
+    display: inline-block;
+    padding: 0.4rem 1.1rem;
+    background: #8a5fe0;
+    color: var(--white);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+.ty-btn:hover { background: var(--yellow); color: var(--purple-dark); transform: translateY(-2px); }
+.ty-card {
+    position: relative;
+    z-index: 1;
+    justify-self: center;
+    width: min(100%, 13rem);
+    aspect-ratio: 736 / 920;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: rotate(2deg);
+}
+@media (max-width: 860px) {
+    .thank-you { grid-template-columns: 1fr; text-align: center; padding: 3rem 6%; gap: 2rem; min-height: 0; }
+    .ty-text p { margin-left: auto; margin-right: auto; }
+    .play-banner:has(.play-photo--cutout) { padding-bottom: 0; }
+    .play-banner:has(.play-photo--cutout) h2 { padding-bottom: 0; }
+    .play-photo--cutout { height: 18rem; width: auto; margin: 0 auto; justify-self: center; }
+}
